@@ -31,7 +31,7 @@
         <div class="flex flex-row w-full mt-4 justify-center">
             <div class="text-gray-600 font-semibold">Tidak punya akun? <a href="<?= base_url('auth/registration') ?>" class=" text-gray-600 font-bold"> Buat Akun</a> </div>
         </div>
-        <button type="submit" class="py-3 px-20 bg-primaryColor rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-300">Masuk</button>
+        <button type="submit" class="py-3 px-20 bg-lime-600 hover:bg-lime-800 rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-300">Masuk</button>
     </form>
 
 </div>

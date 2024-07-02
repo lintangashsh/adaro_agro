@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       colors: {
         primaryColor: '#F9A826',
+        greenAgro: '#187113',
+        greenAgroHover: '#c2e807',
       }
     },
     fontFamily: {

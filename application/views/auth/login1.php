@@ -10,7 +10,7 @@
                     </div>
                     <div class="w-4/12 py-10 rounded-xl m-auto bg-slate-50 bg-opacity-70">
 
-                        <h1 class="text-5xl font-bold font-montserrat text-gray-800">Selamat Datang</h1>
+                        <h1 class="text-5xl font-bold font-montserrat text-gray-800">Ahoy! Welcome!</h1>
 
                         <!-- FORM -->
                         <form method="post" action="<?= base_url('auth') ?>" class="flex flex-col justify-center items-center mt-10">
@@ -44,14 +44,14 @@
                                 </small>
 
                                 <div class="flex flex-row w-full mt-4 justify-center">
-                                    <div class="text-gray-600 text-sm font-montserrat font-semibold">Tidak punya akun? <a href="<?= base_url('auth/registration') ?>" class=" text-gray-600 font-bold"> Buat Akun</a> </div>
+                                    <div class="text-gray-600 text-sm font-montserrat font-semibold">Do not have an account? <a href="<?= base_url('auth/registration') ?>" class=" text-gray-600 font-bold"> Register new account</a> </div>
                                 </div>
 
-                                <button type="submit" class="flex items-center justify-center w-80 h-14 shadow-xl bg-amber-800 rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-300">
+                                <button type="submit" class="flex items-center justify-center w-80 h-14 shadow-xl bg-lime-600 hover:bg-lime-800 rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-300">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                                     </svg>
-                                    Masuk
+                                    Login
                                 </button>
                             </div>
 

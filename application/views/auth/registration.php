@@ -11,7 +11,7 @@
         <!-- Input Full Name -->
         <div class="relative">
             <i class="fa fa-user absolute text-primaryColor text-xl"></i>
-            <input type="text" id="name" name="name" value="<?= set_value('name') ?>" placeholder="Nama lengkap" class="pl-8 border-b-2 font-montserrat outline-none focus:outline-none focus:border-primaryColor transition-all duration-500 text-lg">
+            <input type="text" id="name" name="name" value="<?= set_value('name') ?>" placeholder="Full Name" class="pl-8 border-b-2 font-montserrat outline-none focus:outline-none focus:border-lime-500 transition-all duration-500 text-lg">
             <!-- Text Error -->
             <small class="text-red-500 font-montserrat duration-300">
                 <?= form_error('name') ?>
@@ -20,7 +20,7 @@
         <!-- Input Email -->
         <div class="relative mt-5">
             <i class="fa fa-envelope absolute text-primaryColor text-xl"></i>
-            <input type="text" id="email" name="email" value="<?= set_value('email') ?>" placeholder="Email" class="pl-8 border-b-2 font-montserrat outline-none focus:outline-none focus:border-primaryColor transition-all duration-500 text-lg">
+            <input type="text" id="email" name="email" value="<?= set_value('email') ?>" placeholder="Email" class="pl-8 border-b-2 font-montserrat outline-none focus:outline-none focus:border-lime-500 transition-all duration-500 text-lg">
             <!-- Text Error -->
             <small class="text-red-500 font-montserrat duration-300">
                 <?= form_error('email') ?>
@@ -29,7 +29,7 @@
         <!-- Input Password 1 -->
         <div class="relative mt-5">
             <i class="fa fa-lock absolute text-primaryColor text-xl"></i>
-            <input type="password" id="password1" name="password1" placeholder="Kata Sandi" class="pl-8 border-b-2 font-montserrat outline-none focus:outline-none focus:border-primaryColor transition-all duration-500 text-lg">
+            <input type="password" id="password1" name="password1" placeholder="Password" class="pl-8 border-b-2 font-montserrat outline-none focus:outline-none focus:border-lime-500 transition-all duration-500 text-lg">
             <!-- Text Error -->
             <small class="text-red-500 font-montserrat duration-300">
                 <?= form_error('password1') ?>
@@ -38,15 +38,15 @@
         <!-- Input Password 2 -->
         <div class="relative mt-5">
             <i class="fa fa-lock absolute text-primaryColor text-xl"></i>
-            <input type="password" id="password2" name="password2" placeholder="Ulangi Kata Sandi" class="pl-8 border-b-2 font-montserrat outline-none focus:outline-none focus:border-primaryColor transition-all duration-500 text-lg">
+            <input type="password" id="password2" name="password2" placeholder="Repeat Password" class="pl-8 border-b-2 font-montserrat outline-none focus:outline-none focus:border-lime-500 transition-all duration-500 text-lg">
             <!-- Text Error -->
             <small class="text-red-500 font-montserrat duration-300">
                 <?= form_error('password2') ?>
             </small>
         </div>
-        <button type="submit" class="py-3 px-20 bg-primaryColor rounded-full text-white font-bold uppercase text-lg mt-5 transform hover:translate-y-1 transition-all duration-300">Daftar</button>
+        <button type="submit" class="py-3 px-20 bg-lime-600 hover:bg-lime-800 rounded-full text-white font-bold uppercase text-lg mt-5 transform hover:translate-y-1 transition-all duration-300">Sign Up</button>
     </form>
-    <a href="<?= base_url('auth') ?>" class="mt-5 self-center text-gray-600 font-bold">Sudah Punya Akun</a>
+    <a href="<?= base_url('auth') ?>" class="mt-5 self-center text-gray-600 font-bold">Already have an account?</a>
 
 </div>
 </body>

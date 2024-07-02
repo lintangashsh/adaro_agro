@@ -55,7 +55,7 @@
 
 <body x-data="{navbarOpen: false, scrolledFromTop: false}" @scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false" x-init="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false" class="absolute">
     <!-- menu -->
-    <header class="bg-amber-800 fixed z-50 w-full flex justify-between items-center px-4 md:px-12 h-24 shadow-lg transition-all duration-300" :class="{'h-24': !scrolledFromTop, 'h-12': scrolledFromTop}">
+    <header class="bg-gray-950 fixed z-50 w-full flex justify-between items-center px-4 md:px-12 h-24 shadow-lg transition-all duration-300" :class="{'h-24': !scrolledFromTop, 'h-12': scrolledFromTop}">
         <!-- LOGO ADARO AGRO -->
         <a href="#">
             <img src="<?php echo base_url('assets/img/Adaro Agro.png') ?>" alt="Adaro Agro Logo" class="h-16 lg:ml-20 transition-all duration-200" :class="{'h-16': !scrolledFromTop, 'h-9': scrolledFromTop}">
@@ -65,12 +65,12 @@
         <!-- MENU -->
         <nav>
             <button class="md:hidden" @click="navbarOpen = !navbarOpen">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
 
-            <ul class="font-montserrat bg-black-100 fixed left-0 right-0 items-center mt-3 min-h-screen space-y-4 p-4 transform translate-x-full transition duration-300 md:relative md:flex md:min-h-0 md:space-y-0 md:space-x-6 md:p-0 md:translate-x-0" :class="{'translate-x-full': !navbarOpen, 'translate-x-0': navbarOpen, 'mt-3': !scrolledFromTop, 'mt-0': scrolledFromTop}">
+            <ul class="font-montserrat bg-gray-950 fixed left-0 right-0 items-center mt-3 min-h-screen space-y-4 p-4 transform translate-x-full transition duration-300 md:relative md:flex md:min-h-0 md:space-y-0 md:space-x-6 md:p-0 md:translate-x-0" :class="{'translate-x-full': !navbarOpen, 'translate-x-0': navbarOpen, 'mt-3': !scrolledFromTop, 'mt-0': scrolledFromTop}">
 
                 <?php if (!$this->session->userdata('email')) : ?>
                     <!-- MENU JIKA TIDAK LOGIN -->
@@ -103,7 +103,7 @@
                                 <li class="font-bold" :class="{'pb-2': !scrolledFromTop, 'pb-0': scrolledFromTop}">
                                 <?php else : ?>
                                     <!-- KONDISI UNTUK JUDUL TIDAK AKTIF -->
-                                <li class="lg:border-b-2 border-none pb-1 hover:scale-110 duration-300">
+                                <li class="lg:border-b-2 border-none pb-1 hover:scale-110 hover:underline hover:underline-offset-2 duration-300">
 
                                 <?php endif; ?>
                                 <!-- END IF -->
@@ -150,7 +150,7 @@
                                     <li class="font-bold" :class="{'pb-2': !scrolledFromTop, 'pb-0': scrolledFromTop}">
                                     <?php else : ?>
                                         <!-- KONDISI UNTUK JUDUL TIDAK AKTIF -->
-                                    <li class="lg:border-b-2 border-none pb-1 hover:scale-110 duration-300">
+                                    <li class="lg:border-b-2 border-none pb-1 hover:scale-110 hover:underline hover:underline-offset-2 duration-300">
 
                                     <?php endif; ?>
                                     <!-- END IF -->
@@ -173,7 +173,7 @@
 
                             <li class="mt-1">
                                 <a href="<?= base_url('auth') ?>">
-                                    <button type="button" class="text-white bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-amber-600 dark:hover:bg-amber-700 focus:outline-none dark:focus:ring-amber-800 duration-300">Masuk</button>
+                                    <button type="button" class="text-white bg-lime-600 hover:bg-lime-700 focus:ring-4 focus:ring-lime-600 font-medium hover:underline hover:underline-offset-2 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-800 dark:hover:bg-green-600 focus:outline-none dark:focus:ring-green-600 duration-300">Login</button>
                                 </a>
                             </li>
 
@@ -197,19 +197,19 @@
                                         <div> <?= isset($user['name']) ? $user['name'] : '';?></div>
                                         <div class="font-medium truncate"><?= isset($user['name']) ? $user['name'] : '';?></div>
                                     </div>
-                                    <ul class="py-1 text-sm text-gray-700 " aria-labelledby="avatarButton">
+                                    <ul class="py-1 text-sm text-gray-700 hover:underline hover:underline-offset-2 " aria-labelledby="avatarButton">
                                         <li>
-                                            <a href=" <?= base_url('user/profil') ?>" class="block py-2 px-4 hover:bg-gray-100 ">Profil Saya</a>
+                                            <a href=" <?= base_url('user/profil') ?>" class="block py-2 px-4 hover:bg-gray-100 ">My Profile</a>
                                         </li>
                                         <li>
-                                            <a href=" <?= base_url('user/edit') ?>" class="block py-2 px-4 hover:bg-gray-100 ">Edit Profil</a>
+                                            <a href=" <?= base_url('user/edit') ?>" class="block py-2 px-4 hover:bg-gray-100 ">Edit Profile</a>
                                         </li>
                                         <li>
-                                            <a href=" <?= base_url('user/ubah_password') ?>" class="block py-2 px-4 hover:bg-gray-100 ">Ubah Password</a>
+                                            <a href=" <?= base_url('user/ubah_password') ?>" class="block py-2 px-4 hover:bg-gray-100 ">Change Password</a>
                                         </li>
                                     </ul>
                                     <div class="py-1">
-                                        <a href=" <?= base_url('auth/logout') ?> " class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 ">Keluar</a>
+                                        <a href=" <?= base_url('auth/logout') ?> " class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 ">Logout</a>
                                     </div>
                                 </div>
                             </li>

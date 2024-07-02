@@ -1,0 +1,11 @@
+Hijau kanan: rgb(24 113 19)
+
+Hijau kiri: rgb(194 232 7)
+
+Light theme:
+lime 700(77 124 15)
+hover-->lime 600(101 163 13)
+
+Dark theme:
+green 800(22 101 52)
+hover--> green 600(22 163 74)
