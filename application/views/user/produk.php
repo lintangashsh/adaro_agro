@@ -1,7 +1,7 @@
 <body class="w-full h-full" id="up">
     <div class="pt-24">
         <div class="relative w-full px-10 lg:px-20 lg:mt-20 mt-10 justify-items-center">
-            <h1 class="font-montserrat my-5 lg:mt-20 text-xl lg:text-4xl text-center font-bold">Produk</h1>
+            <h1 class="font-montserrat my-5 lg:mt-20 text-xl lg:text-4xl text-center font-bold">Products</h1>
 
             <!-- KATEGORI -->
             <div class="lg:w-6/12 w-full lg:m-auto grid lg:grid-cols-2 grid-cols-1 text-center">

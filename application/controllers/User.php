@@ -17,7 +17,7 @@ class User extends CI_Controller
     {
         $data['produk'] = $this->model_produk->tampil_data_semua_produk()->result();
         $data['review'] = $this->model_produk->tampil_data_review()->result();
-        $data['title'] = 'Beranda';
+        $data['title'] = 'Home';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('templates/header', $data);
         $this->load->view('user/index', $data);
@@ -28,7 +28,7 @@ class User extends CI_Controller
     public function produk()
     {
         $data['semua_produk'] = $this->model_produk->tampil_data_semua_produk()->result();
-        $data['title'] = 'Produk';
+        $data['title'] = 'Products';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('templates/header', $data);
         $this->load->view('user/produk', $data);
@@ -37,7 +37,7 @@ class User extends CI_Controller
 
     public function tentang()
     {
-        $data['title'] = 'Tentang';
+        $data['title'] = 'About';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('templates/header', $data);
         $this->load->view('user/tentang', $data);
@@ -46,7 +46,7 @@ class User extends CI_Controller
 
     public function profil()
     {
-        $data['title'] = 'Profil';
+        $data['title'] = 'Profile';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['review'] = $this->model_produk->tampil_data_review()->result();
         $this->load->view('templates/header', $data);
@@ -57,7 +57,7 @@ class User extends CI_Controller
     public function testimoni()
     {
         $data['review'] = $this->model_produk->tampil_data_review()->result();
-        $data['title'] = 'Testimoni';
+        $data['title'] = 'Testimony';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('templates/header', $data);
         $this->load->view('user/testimoni', $data);
@@ -83,7 +83,7 @@ class User extends CI_Controller
         ]);
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = 'Edit Profil';
+            $data['title'] = 'Edit Profile';
             $this->load->view('templates/header', $data);
             $this->load->view('user/editProfil', $data);
             $this->load->view('templates/footer');
@@ -153,7 +153,7 @@ class User extends CI_Controller
 
         if ($this->form_validation->run() == false) {
 
-            $data['title'] = 'Ubah Password';
+            $data['title'] = 'Change Password';
             $this->load->view('templates/header', $data);
             $this->load->view('user/ubahPassword', $data);
             $this->load->view('templates/footer');

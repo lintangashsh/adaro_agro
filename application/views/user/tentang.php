@@ -1,11 +1,11 @@
 <body class="w-full h-full" id="up">
     <div class="px-10 lg:px-20 pt-24">
-        <h1 class="font-montserrat my-10 lg:my-20 text-xl lg:text-4xl text-center font-bold">Tentang Rumah Kue Havivya</h1>
+        <h1 class="font-montserrat my-10 lg:my-10 text-xl lg:text-4xl text-center font-bold text-lime-500">About Adaro Global Sinergi</h1>
         <div class="lg:px-48 lg:mt-10 mt-5">
             <div class="w-full h-full px-4 shadow-md">
-                <img src=" <?= base_url('assets/img/logo_hav.png') ?> " class="h-36 mx-auto" data-aos="zoom-in">
+                <img src=" <?= base_url('assets/img/Adaro Agro.png') ?> " class="h-36 mx-auto" data-aos="zoom-in">
 
-                <h1 class="font-montserrat font-bold text-sm lg:text-base">Rumah Kue Havivya</h1>
+                <h1 class="font-montserrat font-bold text-sm lg:text-base mt-6">Rumah Kue Havivya</h1>
 
                 <p class="lg:mt-5 mt-2 leading-8  font-montserrat font-light text-sm text-justify lg:text-base">
                     Rumah Kue Havivya merupakan sebuah bisnis kecil keluarga yang telah kami bangun sejak Februari 2022. Rumah Kue Havivya awalnya hanya sebuah usaha pembuatan kue rumahan biasa yang hanya menjalani serta memproduksi kue untuk lebaran saja, namun seiring berjalannya waktu, kami memutuskan untuk mengembangkan produksi yang kami buat menjadi memproduksi kue-kue sebagai sebuah jajanan atau cemilan kesukaan anda ketika di rumah atau pun dimana pun anda berada.

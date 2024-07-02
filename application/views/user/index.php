@@ -117,7 +117,7 @@
                             </div>
 
                             <div class="flex justify-between items-center mt-4 mb-5">
-                                <span class="text-2xl font-bold text-gray-900">Rp. <?= number_format($pdk->price, 0, ',', '.')  ?></span>
+                                <span class="text-2xl font-bold text-gray-900">USD <?= number_format($pdk->price, 0, ',', '.')  ?></span>
                                 <?= anchor('user/detail_produk/' . $pdk->id, '<button class="text-white bg-lime-600 hover:bg-lime-800 focus:ring-4 focus:outline-none focus:ring-lime-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center duration-300">Lihat Detail</button>') ?>
                             </div>
                         </div>
@@ -237,7 +237,7 @@
         </div>
 
         <a href="<?= base_url('user/testimoni') ?>" class="w-full">
-            <button class="bg-amber-800 py-4 text-white font-montserrat w-full hover:bg-amber-700 rounded-xl mt-6 shadow-xl duration-300">Lebih banyak lagi</button>
+            <button class="bg-lime-600 hover:bg-lime-800 py-4 text-white font-montserrat w-full rounded-xl mt-6 shadow-xl duration-300">Lebih banyak lagi</button>
         </a>
 
     </div>
