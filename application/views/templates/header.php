@@ -56,16 +56,11 @@
 <body x-data="{navbarOpen: false, scrolledFromTop: false}" @scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false" x-init="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false" class="absolute">
     <!-- menu -->
     <header class="bg-amber-800 fixed z-50 w-full flex justify-between items-center px-4 md:px-12 h-24 shadow-lg transition-all duration-300" :class="{'h-24': !scrolledFromTop, 'h-12': scrolledFromTop}">
-        <!-- LOGO RUMAH KUE HAVIVYA -->
+        <!-- LOGO ADARO AGRO -->
         <a href="#">
-            <img src="<?php echo base_url('assets/img/logo_hav.png') ?>" alt="Rumah Kue Havivya Logo" class="h-16 lg:ml-20 transition-all duration-200" :class="{'h-16': !scrolledFromTop, 'h-9': scrolledFromTop}">
+            <img src="<?php echo base_url('assets/img/Adaro Agro.png') ?>" alt="Adaro Agro Logo" class="h-16 lg:ml-20 transition-all duration-200" :class="{'h-16': !scrolledFromTop, 'h-9': scrolledFromTop}">
         </a>
 
-        <!-- TEXT UNFORGETTABLE TASTE -->
-        <!-- <div>
-            <img src="<?php // echo base_url('assets/img/font_white.png') 
-                        ?>" class="hidden lg:block h-44 mt-3 transition-all duration-200" :class="{'h-44': !scrolledFromTop, 'h-32': scrolledFromTop}">
-        </div> -->
 
         <!-- MENU -->
         <nav>
