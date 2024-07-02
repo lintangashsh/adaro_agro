@@ -2,13 +2,13 @@
     <!-- TETIMONI FLOATING ICON -->
     <a href="#testimoni" class="fixed flex items-center z-50 lg:bottom-24 bottom-40 right-0 lg:mr-8 lg:mb-8 mr-4 mb-4 hover:scale-110 animate-bounce duration-300" :class="{'block': !scrolledFromTop, 'hidden': scrolledFromTop, 'bottom-20': !scrolledFromTop, 'bottom-40': scrolledFromTop}" data-aos="fade-down">
         <div class="mr-5 px-5 py-4 rounded-xl items-center font-montserrat font-semibold text-white bg-amber-700 hidden lg:block">
-            Cemana menurut kelen?
+            Do you want to review our products? Click here!
         </div>
         <img src=" <?= base_url('/assets/img/chat.png') ?> " alt="" class="w-16 md:w-16 lg:w-20">
     </a>
 
-    <div class="h-24 bg-amber-800">
-    </div>
+    <!-- <div class="h-24 bg-amber-800">
+    </div> -->
 
     <!-- IMAGE SLIDER -->
     <div class="max-w-full max-h-full m-auto">

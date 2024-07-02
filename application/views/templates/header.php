@@ -70,7 +70,7 @@
                 </svg>
             </button>
 
-            <ul class="font-montserrat bg-amber-800 fixed left-0 right-0 items-center mt-3 min-h-screen space-y-4 p-4 transform translate-x-full transition duration-300 md:relative md:flex md:min-h-0 md:space-y-0 md:space-x-6 md:p-0 md:translate-x-0" :class="{'translate-x-full': !navbarOpen, 'translate-x-0': navbarOpen, 'mt-3': !scrolledFromTop, 'mt-0': scrolledFromTop}">
+            <ul class="font-montserrat bg-black-100 fixed left-0 right-0 items-center mt-3 min-h-screen space-y-4 p-4 transform translate-x-full transition duration-300 md:relative md:flex md:min-h-0 md:space-y-0 md:space-x-6 md:p-0 md:translate-x-0" :class="{'translate-x-full': !navbarOpen, 'translate-x-0': navbarOpen, 'mt-3': !scrolledFromTop, 'mt-0': scrolledFromTop}">
 
                 <?php if (!$this->session->userdata('email')) : ?>
                     <!-- MENU JIKA TIDAK LOGIN -->
