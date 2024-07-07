@@ -1,7 +1,7 @@
 <body>
     <div class="mt-24">
         <div class="w-full p-3">
-            <h1 class="font-montserrat my-10 lg:my-20 text-xl lg:text-4xl text-center font-bold">Edit Profil</h1>
+            <h1 class="font-montserrat my-10 lg:my-20 text-xl lg:text-4xl text-center font-bold text-lime-500">Update Profile</h1>
 
             <div class="w-1/2 m-auto">
                 <?= form_open_multipart('user/edit') ?>
@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Nama Lengkap</label>
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Full Name</label>
                     <input type="text" id="name" name="name" value="<?= $user['name'] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <!-- Text Error -->
                     <small class="text-red-600 font-montserrat duration-300">
@@ -25,13 +25,13 @@
                         <img src=" <?= base_url('assets/img/profil/') . $user['image'] ?>" class="w-20 m-auto">
                     </div>
                     <div class="w-9/12">
-                        <label for="image" class="block mb-1 text-sm font-medium text-gray-900 ">Unggah File</label>
-                        <label for="image" class="block mb-4 text-sm font-medium text-red-900 ">*upload file hanya berukuran rasio 1:1 saja</label>
+                        <label for="image" class="block mb-1 text-sm font-medium text-gray-900 ">Upload File</label>
+                        <label for="image" class="block mb-4 text-sm font-medium text-red-600 ">*only upload an image with a size of 1:1</label>
                         <input type="file" id="image" name="image" class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer focus:outline-none" aria-describedby="user_avatar_help" id="user_avatar">
                     </div>
                 </div>
 
-                <button type="submit" class="w-full py-3 px-20 m-auto bg-primaryColor rounded-full text-white font-bold uppercase text-lg mt-5 transform hover:translate-y-1 transition-all duration-300">Simpan</button>
+                <button type="submit" class="w-full py-3 px-20 m-auto bg-lime-600 hover:bg-lime-800 rounded-full text-white font-bold uppercase text-lg mt-5 transform hover:translate-y-1 transition-all duration-300">Update Profile</button>
 
                 </form>
             </div>

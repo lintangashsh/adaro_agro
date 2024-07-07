@@ -18,15 +18,15 @@ class Auth extends CI_Controller
 		}
 
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
-			'valid_email' => 'Email tidak Valid!',
-			'required' => 'Email harus diisi'
+			'valid_email' => 'Your email is not valid!',
+			'required' => 'Email must be filled in!'
 		]);
 		$this->form_validation->set_rules('password', 'Password', 'required|trim', [
-			'required' => 'Password harus diisi'
+			'required' => 'Password must be filled in!'
 		]);
 
 		if ($this->form_validation->run() == false) {
-			$data['title'] = 'Login Akun Pengguna';
+			$data['title'] = 'Login to user account';
 
 			$this->load->view('templates/header', $data);
 			$this->load->view('auth/login1');
@@ -61,7 +61,7 @@ class Auth extends CI_Controller
 					<svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
 					<span class="sr-only">Info</span>
 					<div>
-					  <span class="font-medium">Password salah!</span>
+					  <span class="font-medium">Wrong Password!</span>
 					</div>
 				  </div>');
 					redirect('auth');
@@ -71,7 +71,7 @@ class Auth extends CI_Controller
 				<svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
 				<span class="sr-only">Info</span>
 				<div>
-				  <span class="font-medium">Akun belum diaktivasi</span>
+				  <span class="font-medium">Your account has not be activated!</span>
 				</div>
 			  </div>');
 				redirect('auth');
@@ -81,7 +81,7 @@ class Auth extends CI_Controller
 			<svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
 			<span class="sr-only">Info</span>
 			<div>
-			  <span class="font-medium">Akun tidak terdaftar!</span>
+			  <span class="font-medium">Your account is not registered!</span>
 			</div>
 		  	</div>');
 			redirect('auth');
@@ -98,27 +98,27 @@ class Auth extends CI_Controller
 		}
 		// FORM VALIDASI
 		$this->form_validation->set_rules('name', 'Name', 'required|trim', [
-			'required' => 'Nama harus diisi'
+			'required' => 'Your name must be filled in!'
 		]);
 		$this->form_validation->set_rules('referral_code', 'Referral_code', 'trim');
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
-			'valid_email' => 'Email tidak Valid!',
-			'is_unique' => 'Email sudah terdaftar!',
-			'required' => 'Email harus diisi'
+			'valid_email' => 'Your email is not valid!',
+			'is_unique' => 'Your email has registered before!',
+			'required' => 'Email must be filled in!'
 		]);
 		$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[8]|matches[password2]', [
-			'matches' => 'Kata sandi tidak sama!',
-			'min_length' => 'Kata sandi terlalu pendek!',
-			'required' => 'Password harus diisi'
+			'matches' => 'The password is incorrect!',
+			'min_length' => 'The password is too short!',
+			'required' => 'Password must be filled in!'
 		]);
 		$this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]', [
-			'required' => 'Password harus diisi',
-			'matches' => 'Kata sandi tidak sama!'
+			'required' => 'Password must be filled in!',
+			'matches' => 'The password is incorrect!'
 		]);
 		// END FORM VALIDASI
 
 		if ($this->form_validation->run() == false) {
-			$data['title'] = 'Registrasi Akun Pengguna';
+			$data['title'] = 'Registration user account';
 			$this->load->view('templates/header', $data);
 			$this->load->view('auth/registration1', $data);
 			$this->load->view('templates/footer', $data);
@@ -144,7 +144,7 @@ class Auth extends CI_Controller
 			<svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
 			<span class="sr-only">Info</span>
 			<div>
-			  <span class="font-medium">Akun kamu sudah berhasil dibuat!</span>
+			  <span class="font-medium">Your account is successfully registered!</span>
 			</div>
 		  	</div>');
 			redirect('auth');
@@ -178,7 +178,7 @@ class Auth extends CI_Controller
 						<svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
 						<span class="sr-only">Info</span>
 						<div>
-						  <span class="font-medium">Kode Referral salah!</span>
+						  <span class="font-medium">Your referral code is incorrect!</span>
 						</div>
 					  </div>');
 						redirect('auth/registration');
@@ -188,7 +188,7 @@ class Auth extends CI_Controller
 					<svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
 					<span class="sr-only">Info</span>
 					<div>
-					  <span class="font-medium">Kode akun pengguna tidak aktif</span>
+					  <span class="font-medium">The user code is not active!</span>
 					</div>
 					  </div>');
 					redirect('auth/registration');
@@ -198,7 +198,7 @@ class Auth extends CI_Controller
 				<svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
 				<span class="sr-only">Info</span>
 				<div>
-				  <span class="font-medium">Kode referral salah!</span>
+				  <span class="font-medium">Your referral code is incorrect!</span>
 				</div>
 				  </div>');
 				redirect('auth/registration');
@@ -215,7 +215,7 @@ class Auth extends CI_Controller
 		<svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
 		<span class="sr-only">Info</span>
 		<div>
-		  <span class="font-medium">Kamu telah berhasil keluar!</span>
+		  <span class="font-medium">Logout successfull!</span>
 		</div>
 	  </div>');
 		redirect('auth');

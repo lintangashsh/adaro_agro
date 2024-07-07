@@ -46,7 +46,7 @@ class Admin extends CI_Controller
             $this->load->library('upload', $config);
 
             if (!$this->upload->do_upload('product_image')) {
-                echo "File gagal diupload";
+                echo "File is unsuccessfully uploaded";
             } else {
                 $product_image = $this->upload->data('file_name');
             }
@@ -66,7 +66,7 @@ class Admin extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                    <span class="font-medium">Data berhasil ditambah!</span>
+                    <span class="font-medium">New data has been successfully added!</span>
                     </div>
                     </div>');
         redirect('admin');
@@ -90,7 +90,7 @@ class Admin extends CI_Controller
         $where = array('id' => $id);
         $data['semua_user'] = $this->model_produk->edit_produk($where, 'user')->result();
 
-        $data['title'] = 'Edit Data User';
+        $data['title'] = 'Edit User Data';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('templates/header', $data);
         $this->load->view('admin/editUser', $data);
@@ -102,7 +102,7 @@ class Admin extends CI_Controller
         $where = array('id' => $id);
         $data['review'] = $this->model_produk->edit_testimoni($where, 'tb_review')->result();
 
-        $data['title'] = 'Edit Testimoni';
+        $data['title'] = 'Edit Review';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->load->view('templates/header', $data);
@@ -113,7 +113,7 @@ class Admin extends CI_Controller
     public function tambah_pesanan()
     {
 
-        $data['title'] = 'Tambah Pesanan';
+        $data['title'] = 'Add Order';
         $data['review'] = $this->model_produk->tampil_data_review()->result();
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
@@ -176,7 +176,7 @@ class Admin extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                    <span class="font-medium">Data berhasil diubah!</span>
+                    <span class="font-medium">New data has been successfully added!</span>
                     </div>
                     </div>');
         redirect('admin');
@@ -208,7 +208,7 @@ class Admin extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                    <span class="font-medium">Data User berhasil diubah!</span>
+                    <span class="font-medium">User data has been successfully changed!</span>
                     </div>
                     </div>');
         redirect('admin');
@@ -231,7 +231,7 @@ class Admin extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                    <span class="font-medium">Review berhasil diterima</span>
+                    <span class="font-medium">New review has been successfully accepted!</span>
                     </div>
                     </div>');
         redirect('admin');
@@ -254,7 +254,7 @@ class Admin extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                    <span class="font-medium">Review berhasil diterima</span>
+                    <span class="font-medium">New review has been successfully rejected!</span>
                     </div>
                     </div>');
         redirect('admin');
@@ -302,7 +302,7 @@ class Admin extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                    <span class="font-medium">Data berhasil diubah!</span>
+                    <span class="font-medium">New data has been successfully recorded</span>
                     </div>
                     </div>');
         redirect('admin');
@@ -318,7 +318,7 @@ class Admin extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                    <span class="font-medium">Produk berhasil dihapus!</span>
+                    <span class="font-medium">Product is deleted!</span>
                     </div>
                     </div>');
         redirect('admin');
@@ -337,7 +337,7 @@ class Admin extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                    <span class="font-medium">Data user berhasil diubah!</span>
+                    <span class="font-medium">User data has been successfully changed!</span>
                     </div>
                     </div>');
             redirect('admin');
@@ -348,7 +348,7 @@ class Admin extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                    <span class="font-medium">Data user berhasil diubah!</span>
+                    <span class="font-medium">User data has been successfully changed!</span>
                     </div>
                     </div>');
             redirect('admin');
@@ -365,7 +365,7 @@ class Admin extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                    <span class="font-medium">Testimoni berhasil dihapus!</span>
+                    <span class="font-medium">Review is deleted!</span>
                     </div>
                     </div>');
         redirect('admin');
@@ -381,7 +381,7 @@ class Admin extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                    <span class="font-medium">Testimoni berhasil dihapus!</span>
+                    <span class="font-medium">Review is deleted!</span>
                     </div>
                     </div>');
         redirect('admin');
@@ -409,7 +409,7 @@ class Admin extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                    <span class="font-medium">Poin berhasil ditambah!</span>
+                    <span class="font-medium">User point is updated!</span>
                     </div>
                     </div>');
                 redirect('admin');
@@ -418,7 +418,7 @@ class Admin extends CI_Controller
 					<svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
 					<span class="sr-only">Info</span>
 					<div>
-					  <span class="font-medium">Kode akun pengguna tidak aktif</span>
+					  <span class="font-medium">User account code is not active</span>
 					</div>
 					  </div>');
                 redirect('admin');
@@ -428,7 +428,7 @@ class Admin extends CI_Controller
 				<svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
 				<span class="sr-only">Info</span>
 				<div>
-				  <span class="font-medium">Kode akun tidak terdaftar!</span>
+				  <span class="font-medium">User account code is not registered!</span>
 				</div>
 				  </div>');
             redirect('admin');
@@ -452,7 +452,7 @@ class Admin extends CI_Controller
 					<svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
 					<span class="sr-only">Info</span>
 					<div>
-					  <span class="font-medium">Poin pengguna tidak cukup untuk mendapatkan diskon</span>
+					  <span class="font-medium">User point is not capable to get a discount</span>
 					</div>
 					  </div>');
                     redirect('admin');
@@ -468,7 +468,7 @@ class Admin extends CI_Controller
                         <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                         <span class="sr-only">Info</span>
                         <div>
-                        <span class="font-medium">Diskon 10% berhasil didapatkan!</span>
+                        <span class="font-medium">Discount 10% has been successfully added!</span>
                         </div>
                         </div>');
                     redirect('admin');
@@ -478,7 +478,7 @@ class Admin extends CI_Controller
 					<svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
 					<span class="sr-only">Info</span>
 					<div>
-					  <span class="font-medium">Kode akun pengguna tidak aktif</span>
+					  <span class="font-medium">User account code is not active</span>
 					</div>
 					  </div>');
                 redirect('admin');
@@ -488,7 +488,7 @@ class Admin extends CI_Controller
 				<svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
 				<span class="sr-only">Info</span>
 				<div>
-				  <span class="font-medium">Kode akun tidak terdaftar!</span>
+				  <span class="font-medium">User account code is not registered!</span>
 				</div>
 				  </div>');
             redirect('admin');

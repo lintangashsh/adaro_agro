@@ -24,7 +24,7 @@
                                             <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                                         </svg>
                                     </div>
-                                    <input type="text" name="email" id="email" value="<?= set_value('email'); ?>" class="bg-white border border-white shadow-xl text-gray-900 text-base rounded-full focus:ring-amber-500 focus:border-amber-500 block w-80 h-14 pl-14 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Email">
+                                    <input type="text" name="email" id="email" value="<?= set_value('email'); ?>" class="bg-white border border-white shadow-xl text-gray-900 text-base rounded-full focus:ring-lime-500 focus:border-lime-500 block w-80 h-14 pl-14 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-lime-500 dark:focus:border-lime-500" placeholder="Email">
                                 </div>
                                 <small class="text-red-600 font-semibold font-montserrat text-left duration-300">
                                     <?= form_error('email') ?>
@@ -37,14 +37,14 @@
                                             <path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd" />
                                         </svg>
                                     </div>
-                                    <input type="password" name="password" id="password" class="bg-white border border-white shadow-xl text-gray-900 text-base rounded-full focus:ring-amber-500 focus:border-amber-500 block w-80 h-14 pl-14 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Kata Sandi">
+                                    <input type="password" name="password" id="password" class="bg-white border border-white shadow-xl text-gray-900 text-base rounded-full focus:ring-lime-500 focus:border-lime-500 block w-80 h-14 pl-14 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-lime-500 dark:focus:border-lime-500" placeholder="Password">
                                 </div>
                                 <small class="text-red-600 font-semibold font-montserrat text-left duration-300">
                                     <?= form_error('password') ?>
                                 </small>
 
                                 <div class="flex flex-row w-full mt-4 justify-center">
-                                    <div class="text-gray-600 text-sm font-montserrat font-semibold">Do not have an account? <a href="<?= base_url('auth/registration') ?>" class=" text-gray-600 font-bold"> Register new account</a> </div>
+                                    <div class="text-gray-600 text-sm font-montserrat font-semibold">Do not have an account? <a href="<?= base_url('auth/registration') ?>" class=" text-gray-600 font-bold"> Register new account here!</a> </div>
                                 </div>
 
                                 <button type="submit" class="flex items-center justify-center w-80 h-14 shadow-xl bg-lime-600 hover:bg-lime-800 rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-300">

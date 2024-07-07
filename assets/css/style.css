@@ -663,6 +663,10 @@ html {
   right: 50%;
 }
 
+.right-1\/4{
+  right: 25%;
+}
+
 .bottom-0{
   bottom: 0px;
 }
@@ -677,6 +681,10 @@ html {
 
 .left-1\/2{
   left: 50%;
+}
+
+.left-1\/4{
+  left: 25%;
 }
 
 .bottom-1\/2{
@@ -1935,6 +1943,11 @@ html {
 .text-red-700{
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
+}
+
+.text-blue-600{
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 
 .text-gray-900{

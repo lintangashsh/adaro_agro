@@ -49,7 +49,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Nunito:wght@300;400;700&display=swap');
         /* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&'); */
     </style>
-    <title> <?= $title; ?> </title>
+    <title> Adaro-<?= $title; ?> </title>
 </head>
 
 

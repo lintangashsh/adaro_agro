@@ -84,7 +84,7 @@
                                 </small>
 
                                 <div class="flex flex-row w-full mt-4 justify-center">
-                                    <div class="text-gray-600 text-sm font-montserrat font-semibold">Already have an account? <a href="<?= base_url('auth') ?>" class=" text-gray-600 font-bold"> Login</a> </div>
+                                    <div class="text-gray-600 text-sm font-montserrat font-semibold">Already have an account? <a href="<?= base_url('auth') ?>" class=" text-gray-600 font-bold"> Login here!</a> </div>
                                 </div>
 
                                 <button type="submit" class="flex items-center justify-center w-80 h-14 shadow-xl bg-lime-600 hover:bg-lime-800 rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-300">

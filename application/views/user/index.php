@@ -130,114 +130,19 @@
 
         </div>
 
-        <!-- REVIEW -->
-        <div id="testimoni"></div>
-        <h1 class="font-montserrat mt-10 mb-5 lg:mt-20 lg:mb-10 text-xl lg:text-4xl text-center font-bold">Cemana Menurut Kelen?</h1>
+        <br>
+        <br>
 
-        <div class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 bg-white dark:bg-gray-800">
-
-            <?php
-            $delay = 0;
-            $sql = "SELECT * FROM `tb_review` WHERE `favorite` = ? ";
-            $review  = $this->db->query($sql, array(1))->result();
-            ?>
-
-            <?php foreach ($review as $rv) : ?>
-
-                <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
-                    <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-                        <button data-modal-target="defaultModal<?= $rv->id; ?>" data-modal-toggle="defaultModal<?= $rv->id; ?>" blur-shadow-image="true">
-                            <!-- <img class="w-auto rounded-lg h-72 m-auto" src="?= //base_url('assets/img/testimoni/') . $rv->image_review ?>" /> -->
-
-                            <video class="w-auto rounded-lg h-72 m-auto" loop muted autoplay poster="<?= base_url('assets/img/testimoni/') . $rv->image_review ?>">
-                                <source src="<?= base_url('assets/img/testimoni/') . $rv->image_review ?>" type="video/webm">
-                                <source src="<?= base_url('assets/img/testimoni/') . $rv->image_review ?>" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </button>
-                        <p class="my-4"><?= $rv->review ?></p>
-                    </blockquote>
-                    <figcaption class="flex items-center justify-center ">
-                        <img class="rounded-full w-9 h-9" src="<?= base_url('assets/img/profil/') . $rv->image_profile ?>" alt="profile picture">
-                        <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
-                            <div><?= $rv->name ?></div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400 ">Diposting pada <?= date('d F Y', $rv->posting_time) ?></div>
-                        </div>
-                    </figcaption>
-                </figure>
-
-
-                <!-- Batas -->
-
-
-                <?php $delay += 100; ?>
-
-                <!-- MODAL -->
-                <!-- Main modal -->
-                <div id="defaultModal<?= $rv->id; ?>" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
-                    <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
-                        <!-- Modal content -->
-                        <div class="relative px-5 bg-white rounded-lg shadow dark:bg-gray-700">
-                            <!-- Modal header -->
-                            <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                                    Ulasan
-                                </h3>
-                                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal<?= $rv->id; ?>">
-                                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span class="sr-only">Close modal</span>
-                                </button>
-                            </div>
-                            <!-- Modal body -->
-                            <div class="lg:w-96 w-full lg:h-auto h-full m-auto mt-2">
-                                <?php
-                                $media = $rv->image_review;
-                                $ext = substr($media, -3);
-                                $baseUrl = base_url('assets/img/testimoni/');
-
-                                if ($ext == 'jpg') {
-                                    echo '<img class="rounded" src="' . $baseUrl . $rv->image_review . '">';
-                                } else if ($ext == 'JPG') {
-                                    echo '<img class="rounded" src="' . $baseUrl . $rv->image_review . '">';
-                                } else if ($ext == 'peg') {
-                                    echo '<img class="rounded" src="' . $baseUrl . $rv->image_review . '">';
-                                } else if ($ext == 'png') {
-                                    echo '<img class="rounded" src="' . $baseUrl . $rv->image_review . '">';
-                                } else {
-                                    echo '<video class="rounded" controls>';
-                                    echo '<source src="' . $baseUrl . $rv->image_review . '" type="video/webm">';
-                                    echo '<source src="' . $baseUrl . $rv->image_review . '" type="video/mp4">';
-                                    echo 'Maaf, browser Anda tidak mendukung tag video.';
-                                    echo '</video>';
-                                }
-                                ?>
-                            </div>
-                            <div class="w-full pb-4">
-                                <div class="pb-2 pt-5">
-                                    <p class="text-xs">Diposting pada <?= date('d F Y', $rv->posting_time) ?></p>
-                                </div>
-                                <div class="flex items-center pb-2">
-                                    <a href="#" class="avatar">
-                                        <img class="w-10 h-10 rounded-full" src="<?= base_url('assets/img/profil/') . $rv->image_profile ?>" alt="Rounded avatar">
-                                    </a>
-                                    <span class="text-gray-700 text-base mb-0 font-bold ml-2"><?= $rv->name ?></span>
-                                </div>
-                                <p class="mb-2 text-sm font-montserrat">
-                                    <?= $rv->review ?>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END MODAL -->
-            <?php endforeach ?>
-
-        </div>
-
-        <a href="<?= base_url('user/testimoni') ?>" class="w-full">
-            <button class="bg-lime-600 hover:bg-lime-800 py-4 text-white font-montserrat w-full rounded-xl mt-6 shadow-xl duration-300">Lebih banyak lagi</button>
+        <a href="https://api.whatsapp.com/send?phone=6285351737216">
+            <button style="background-image: url(assets/img/Icon/collaborate.png);" class="bg-lime-600 hover:bg-lime-800 py-6 text-white font-montserrat w-full m-auto lg:text-3xl text-2xl rounded-xl shadow-xl duration-300">Ready to collaborate? <span class="font-extrabold">Contact Us Now</span></button>
         </a>
-
+        <div class="lg:mt-10 md:mt-8 mt-8">
+            <div class="lg:text-3xl text-xl pb-6 font-montserrat font-bold text-center tracking-wide">Supported By
+            </div>
+            <div class="flex w-full justify-center mt-3">
+                <img class="mx-3 lg:h-24 h-10" src=" <?= base_url('assets/img/logo/ppei_logo.png') ?>" alt="PPEI">
+                <img class="mx-3 lg:h-24 h-10" src="<?= base_url('assets/img/logo/kementerian_perdagangan_logo.png') ?>" alt="Kementrian Perdagangan">
+                <img class="mx-3 lg:h-24 h-10" src="<?= base_url('assets/img/logo/fta_logo.png') ?>" alt="FTA">
+            </div>
+        </div>
     </div>

@@ -6,8 +6,7 @@ class User extends CI_Controller
     public function __construct()
     {
         // MENGECEK APAKAH SUDAH LOGIN ATAU BELUM
-        //JIKA BELUM DIKEMBALIKAN KE PAGE LOGIN
-        // $role_id = $this->session->userdata('role_id');
+        // JIKA BELUM DIKEMBALIKAN KE PAGE LOGIN
         parent::__construct();
         is_logged_in();
         $this->load->library('form_validation');
@@ -22,7 +21,6 @@ class User extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('user/index', $data);
         $this->load->view('templates/footer');
-        // echo 'Selamat Datang ' . isset($data['user']['name']) ? $data['user']['name'] : '';
     }
 
     public function produk()
@@ -57,7 +55,7 @@ class User extends CI_Controller
     public function testimoni()
     {
         $data['review'] = $this->model_produk->tampil_data_review()->result();
-        $data['title'] = 'Testimony';
+        $data['title'] = 'Review';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('templates/header', $data);
         $this->load->view('user/testimoni', $data);
@@ -67,7 +65,7 @@ class User extends CI_Controller
     public function tambah_testimoni()
     {
         $data['review'] = $this->model_produk->tampil_data_review()->result();
-        $data['title'] = 'Tambah Testimoni';
+        $data['title'] = 'Add Review';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('templates/header', $data);
         $this->load->view('user/tambahReview', $data);
@@ -79,7 +77,7 @@ class User extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('name', 'Nama Lengkap', 'required|trim', [
-            'required' => 'Nama harus diisi'
+            'required' => 'Name must be filled in'
         ]);
 
         if ($this->form_validation->run() == false) {
@@ -125,7 +123,7 @@ class User extends CI_Controller
 			<svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
 			<span class="sr-only">Info</span>
 			<div>
-			  <span class="font-medium">Profil kamu berhasil diupdate!</span>
+			  <span class="font-medium">Your profile is successfully updated!</span>
 			</div>
 		  	</div>');
             redirect('user/profil');
@@ -137,18 +135,18 @@ class User extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('current_password', 'Kata Sandi Lama', 'required|trim', [
-            'required'      => 'Password harus diisi!'
+            'required'      => 'Password must be filled in!'
         ]);
         $this->form_validation->set_rules('new_password1', 'Kata Sandi Baru', 'required|min_length[8]|matches[new_password2]', [
-            'matches'       => 'Kata sandi tidak sama!',
-            'min_length'    => 'Kata sandi minimal 8 karakter!',
-            'required'      => 'Password harus diisi!'
+            'matches'       => 'Password is incorrect!',
+            'min_length'    => 'Password must be at least 8 characters!',
+            'required'      => 'Password must be filled in!'
         ]);
 
         $this->form_validation->set_rules('new_password2', 'Ulangi Kata Sandi', 'required|min_length[8]|matches[new_password1]', [
-            'matches'       => 'Kata sandi tidak sama!',
-            'min_length'    => 'Kata sandi minimal 8 karakter!',
-            'required'      => 'Password harus diisi!'
+            'matches'       => 'Password is incorrect!',
+            'min_length'    => 'Password must be at least 8 characters!',
+            'required'      => 'Password must be filled in!'
         ]);
 
         if ($this->form_validation->run() == false) {
@@ -165,7 +163,7 @@ class User extends CI_Controller
 			    <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
 			    <span class="sr-only">Info</span>
 			    <div>
-			  <span class="font-medium">Kata sandi lama salah!</span>
+			  <span class="font-medium">Old password is incorrect!</span>
 			    </div>
 		  	    </div>');
                 redirect('user/ubah_password');
@@ -175,7 +173,7 @@ class User extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                     <span class="font-medium">Tidak boleh menggunakan kata sandi lama!</span>
+                     <span class="font-medium">New password must not be the old password!</span>
                     </div>
                     </div>');
                     redirect('user/ubah_password');
@@ -191,7 +189,7 @@ class User extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                    <span class="font-medium">Kata sandi berhasil diubah!</span>
+                    <span class="font-medium">Password is successfully updated!</span>
                     </div>
                     </div>');
                     redirect('user/profil');
@@ -206,7 +204,7 @@ class User extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $data['produk'] = $this->model_produk->detail_semua_produk($id);
-        $data['title'] = 'Detail Produk';
+        $data['title'] = 'Product Details';
 
         $this->load->view('templates/header', $data);
         $this->load->view('user/detailProduk', $data);
@@ -228,7 +226,7 @@ class User extends CI_Controller
             $this->load->library('upload', $config);
 
             if (!$this->upload->do_upload('image_review')) {
-                echo "Gambar gagal diupload";
+                echo "Image is unsuccessfully uploaded";
             } else {
                 $image_review = $this->upload->data('file_name');
             }
@@ -248,7 +246,7 @@ class User extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                    <span class="font-medium">Data berhasil ditambah!</span>
+                    <span class="font-medium">Your review has recorded!</span>
                     </div>
                     </div>');
         redirect('user/testimoni');
@@ -270,7 +268,7 @@ class User extends CI_Controller
             $this->load->library('upload', $config);
 
             if (!$this->upload->do_upload('image_review')) {
-                echo "Gambar gagal diupload";
+                echo "Image is unsuccessfully uploaded";
             } else {
                 $image_review = $this->upload->data('file_name');
             }
@@ -291,7 +289,7 @@ class User extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                    <span class="font-medium">Data berhasil ditambah!</span>
+                    <span class="font-medium">Your review has recorded!</span>
                     </div>
                     </div>');
         redirect('user/produk');
@@ -302,7 +300,7 @@ class User extends CI_Controller
         $where = array('id_product' => $id);
         $data['review_detail'] = $this->model_produk->edit_testimoni($where, 'tb_review_detail')->result();
 
-        $data['title'] = 'Tambah Testimoni';
+        $data['title'] = 'Add Review';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['produk'] = $this->model_produk->detail_semua_produk($id);
 
@@ -319,7 +317,7 @@ class User extends CI_Controller
                     <svg aria-hidden="true" class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Info</span>
                     <div>
-                    <span class="font-medium">Testimoni berhasil dihapus!</span>
+                    <span class="font-medium">Your review is successfully deleted</span>
                     </div>
                     </div>');
         redirect('user/profil');

@@ -6,7 +6,7 @@
     <form method="post" action="<?= base_url('auth/registration') ?>" class="flex flex-col justify-center items-center">
         <img src="<?php echo base_url('assets/img/avatar.svg') ?>" class="w-32">
 
-        <h2 class="my-8 font-montserrat font-bold text-3xl text-gray-700 text-center">Daftar</h2>
+        <h2 class="my-8 font-montserrat font-bold text-3xl text-gray-700 text-center">Sign Up</h2>
 
         <!-- Input Full Name -->
         <div class="relative">
