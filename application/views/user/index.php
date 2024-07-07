@@ -1,6 +1,6 @@
 <body class="w-full h-full" id="up">
     <!-- TETIMONI FLOATING ICON -->
-    <a href="#testimoni" class="fixed flex items-center z-50 lg:bottom-24 bottom-40 right-0 lg:mr-8 lg:mb-8 mr-4 mb-4 hover:scale-110 animate-bounce duration-300" :class="{'block': !scrolledFromTop, 'hidden': scrolledFromTop, 'bottom-20': !scrolledFromTop, 'bottom-40': scrolledFromTop}" data-aos="fade-down">
+    <a href="<?= base_url('user/tambah_testimoni') ?>" class="fixed flex items-center z-50 lg:bottom-24 bottom-40 right-0 lg:mr-8 lg:mb-8 mr-4 mb-4 hover:scale-110 animate-bounce duration-300" :class="{'block': !scrolledFromTop, 'hidden': scrolledFromTop, 'bottom-20': !scrolledFromTop, 'bottom-40': scrolledFromTop}" data-aos="fade-down">
         <div class="mr-5 px-5 py-4 rounded-xl items-center font-montserrat font-semibold text-white bg-lime-500 hidden lg:block">
             Do you want to review our products? Click here!
         </div>
@@ -117,7 +117,7 @@
                             </div>
 
                             <div class="flex justify-between items-center mt-4 mb-5">
-                                <span class="text-2xl font-bold text-gray-900">USD <?= number_format($pdk->price, 0, ',', '.')  ?></span>
+                                <span class="text-2xl font-bold text-gray-900">USD <?= number_format($pdk->price, 1, ',', '.')  ?>/Kg</span>
                                 <?= anchor('user/detail_produk/' . $pdk->id, '<button class="text-white bg-lime-600 hover:bg-lime-800 focus:ring-4 focus:outline-none focus:ring-lime-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center duration-300">Lihat Detail</button>') ?>
                             </div>
                         </div>

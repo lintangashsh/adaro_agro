@@ -16,8 +16,8 @@
     <div class="pt-24">
         <div class="relative w-full px-10 lg:px-20 mt-20 justify-items-center">
 
-            <h1 class="font-montserrat my-10 lg:my-20 text-xl lg:text-4xl text-center font-bold text-lime-500">Admin Panel</h1>
-
+            <h1 class="font-montserrat my-10 lg:my-20 text-xl lg:text-4xl text-center font-bold text-lime-500">
+                <span class="text-white bg-lime-500 rounded-md py-2 px-3">Admin</span> Panel</h1>
             <?= $this->session->flashdata('message') ?>
 
             <!-- Acc Review User -->
@@ -34,9 +34,9 @@
                                 <th scope="col" class="py-3 px-6">
                                     Name
                                 </th>
-                                <th scope="col" class="py-3 px-6">
+                                <!-- <th scope="col" class="py-3 px-6">
                                     Product Name
-                                </th>
+                                </th> -->
                                 <th scope="col" class="py-3 px-6">
                                     Review
                                 </th>
@@ -54,8 +54,8 @@
 
                         <tbody>
                             <?php
-                            // $sql = "SELECT * FROM `tb_review_detail` WHERE `agree` = 0 ";
-                            // $review_detail_acc  = $this->db->query($sql)->result();
+                            $sql = "SELECT * FROM `tb_review_detail` WHERE `agree` = 0 ";
+                            $review_detail_acc  = $this->db->query($sql)->result();
                             ?>
                             <!-- FOREACH -->
                             <?php
@@ -68,9 +68,9 @@
                                     <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         <?= $rvdd->name ?>
                                     </th>
-                                    <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        <?= $rvdd->product_name ?>
-                                    </th>
+                                    <!-- <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <?= $rvdd->id_produk ?>
+                                    </th> -->
                                     <td class="py-4 px-6">
                                         <?= $rvdd->review ?>
                                     </td>
@@ -118,9 +118,6 @@
                     </table>
                 </div>
             </div>
-
-
-
 
             <!-- 
                     TABEL
@@ -436,7 +433,7 @@
                                         <?= $spdk->category ?>
                                     </td>
                                     <td class="py-4 px-6">
-                                        USD <?= number_format($spdk->price, 0, ',', '.')  ?>
+                                        USD <?= number_format($spdk->price, 1, ',', '.')  ?>
                                     </td>
                                     <td class="py-4 px-6 text-center">
                                         <?= $spdk->favorite ?>

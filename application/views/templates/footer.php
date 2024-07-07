@@ -20,13 +20,13 @@
             </div>
             <div class="flex flex-col mt-14 font-montserrat font-normal text-sm text-left">
                 <div class="font-montserrat text-base font-extrabold pb-2">PT. Adaro Global Sinergi</div>
-                <a href="<?= base_url('user/tentang') ?>" class="pb-2 w-fit text-sm hover:scale-110 duration-300">About Us</a>
+                <a href="<?= base_url('user/tentang') ?>" class="pb-2 w-fit text-sm hover:scale-110 duration-300">About</a>
                 <a href="<?= base_url('user/testimoni') ?>" class="w-fit text-sm hover:scale-110 duration-300">Review</a>
             </div>
             <div class="flex flex-col mt-14 font-montserrat font-normal text-sm text-left">
                 <div class="font-montserrat text-base font-extrabold pb-2">Products</div>
                 <a href="<?= base_url('user/produk#gradeI') ?>" class="pb-2 w-fit text-sm hover:scale-110 duration-300">Black Tea Grade I</a>
-                <a href="<?= base_url('user/produk#gradeII') ?>" class="pb-2 w-fit text-sm hover:scale-110 duration-300">Black Tea grade II</a>
+                <a href="<?= base_url('user/produk#gradeII') ?>" class="pb-2 w-fit text-sm hover:scale-110 duration-300">Black Tea Grade II</a>
             </div>
             <div class="mt-14  w-fit">
                 <div class="grid grid-cols-5 grid-flow-row gap-1">

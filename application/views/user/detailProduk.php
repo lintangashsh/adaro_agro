@@ -3,8 +3,8 @@
     <?php foreach ($produk as $pdk) : ?>
         <a href="<?= base_url('user/tambah_testimoni_detail/') . $pdk->id ?>">
             <button class="fixed flex items-center z-50 lg:bottom-24 bottom-40 right-0 lg:mr-8 lg:mb-8 mr-4 mb-4 hover:scale-110 animate-bounce duration-300" :class="{'bottom-20': !scrolledFromTop, 'bottom-40': scrolledFromTop}" data-aos="fade-down">
-                <div class="mr-5 px-5 py-4 hidden lg:block rounded-xl items-center font-montserrat font-semibold text-white bg-amber-700">
-                    Tulis Ulasan mu!
+                <div class="mr-5 px-5 py-4 rounded-xl items-center font-montserrat font-semibold text-white bg-lime-500 hidden lg:block">
+                    Do you want to review our products? Click here!
                 </div>
                 <img src=" <?= base_url('/assets/img/writing.png') ?> " alt="" class="w-16 md:w-16 lg:w-20">
             </button>
@@ -13,7 +13,7 @@
 
     <div class="pt-24">
         <div class="relative w-full px-10 lg:px-60 mt-20 justify-items-center">
-            <h1 class="font-montserrat my-10 lg:my-20 text-xl lg:text-4xl text-center font-bold">Detail Produk</h1>
+            <h1 class="font-montserrat my-10 lg:my-20 text-xl lg:text-4xl text-center font-bold">Product Details</h1>
 
             <!-- PERULANGAN -->
             <?php foreach ($produk as $pdk) : ?>
@@ -24,16 +24,16 @@
                     </div>
                     <div class="m-auto h-full w-full">
                         <h1 class="lg:text-3xl text-xl pb-1 mt-2 font-montserrat font-bold text-left top-0"><?= $pdk->product_name ?></h1>
-                        <h1 class="lg:text-3xl text-xl pb-1 font-montserrat font-bold text-left top-0">Rp. <?= number_format($pdk->price, 0, ',', '.')  ?></h1>
+                        <h1 class="lg:text-3xl text-xl pb-1 font-montserrat font-bold text-left top-0">USD <?= number_format($pdk->price, 1, ',', '.')  ?></h1>
                         <br>
-                        <h1 class="text-lg font-montserrat pb-1">Deskripsi</h1>
+                        <h1 class="text-lg font-montserrat pb-5">Description</h1>
                         <p class="lg:w-9/12 w-full font-montserrat text-justify"><?= $pdk->description ?></p>
                     </div>
                 </div>
 
                 <div class="lg:w-1/2 w-full mt-12 lg:ml-20 bg-gray-50 p-5 rounded-xl shadow-sm">
 
-                    <h1 class="font-montserrat font-semibold text-xl">Cemana menurut kelen?</h1>
+                    <h1 class="font-montserrat font-semibold text-xl">How do you feel about this particular product?</h1>
                     <br>
 
                     <?php foreach ($produk as $pdk) : ?>
@@ -48,7 +48,7 @@
 
                             <div class="w-full">
                                 <div class="pb-2 pt-5">
-                                    <p class="text-xs">Diposting pada <?= date('d F Y', $rvd->posting_time) ?></p>
+                                    <p class="text-xs">Posted on <?= date('d F Y', $rvd->posting_time) ?></p>
                                 </div>
                                 <div class="flex items-center pb-2">
                                     <div class="avatar">
@@ -65,7 +65,7 @@
                                     <video class="w-20 h-20 rounded" loop muted autoplay poster="<?= base_url('assets/img/testimoni/') . $rvd->image_review ?>">
                                         <source src="<?= base_url('assets/img/testimoni/') . $rvd->image_review ?>" type="video/webm">
                                         <source src="<?= base_url('assets/img/testimoni/') . $rvd->image_review ?>" type="video/mp4">
-                                        Maaf, browser Anda tidak mendukung tag video.
+                                        Unfortunately, your browser does not support video tag!
                                     </video>
                                 </button>
                                 <hr>
@@ -81,7 +81,7 @@
                                         <!-- Modal header -->
                                         <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
                                             <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                                                Ulasan
+                                                Review
                                             </h3>
                                             <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal<?= $rvd->id_review; ?>">
                                                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -109,14 +109,14 @@
                                                 echo '<video class="rounded" controls>';
                                                 echo '<source src="' . $baseUrl . $rvd->image_review . '" type="video/webm">';
                                                 echo '<source src="' . $baseUrl . $rvd->image_review . '" type="video/mp4">';
-                                                echo 'Maaf, browser Anda tidak mendukung tag video.';
+                                                echo 'Unfortunately, your browser does not support video tag!';
                                                 echo '</video>';
                                             }
                                             ?>
                                         </div>
                                         <div class="w-full pb-4">
                                             <div class="pb-2 pt-5">
-                                                <p class="text-xs">Diposting pada <?= date('d F Y', $rvd->posting_time) ?></p>
+                                                <p class="text-xs">Posted on <?= date('d F Y', $rvd->posting_time) ?></p>
                                             </div>
                                             <div class="flex items-center pb-2">
                                                 <a href="#" class="avatar">

@@ -1,20 +1,16 @@
 <body class="w-full h-full" id="up">
     <!-- ADD TESTIMONI FLOATING ICON -->
     <a href="<?= base_url('user/tambah_testimoni') ?>" type="button" class="fixed flex items-center z-50 lg:bottom-24 bottom-40 right-0 lg:mr-8 lg:mb-8 mr-4 mb-4 hover:scale-110 animate-bounce duration-300" :class="{'bottom-20': !scrolledFromTop, 'bottom-40': scrolledFromTop}" data-aos="fade-down">
-        <div class="mr-5 px-5 py-4 hidden lg:block rounded-xl items-center font-montserrat font-semibold text-white bg-amber-700">
-            Tulis Ulasan mu!
+        <div class="mr-5 px-5 py-4 rounded-xl items-center font-montserrat font-semibold text-white bg-lime-500 hidden lg:block">
+            Do you want to review our products? Click here!
         </div>
         <img src=" <?= base_url('/assets/img/writing.png') ?> " alt="" class="w-16 md:w-16 lg:w-20">
     </a>
     <div class="pt-24">
         <div class="relative w-full px-10 lg:px-20 lg:mt-20 mt-10 justify-items-center">
-            <!-- <h1 class="font-montserrat my-5 lg:mt-20 text-xl lg:text-4xl text-center font-bold">Testimoni</h1> -->
+            <h1 class="font-montserrat my-5 lg:mt-20 text-xl lg:text-4xl text-center font-bold text-lime-500">Overall Review</h1>
 
             <div class="w-full mt-10 lg:bg-gray-50 rounded-xl lg:px-9 pb-1">
-                <div class="lg:text-xl text-lg font-montserrat font-bold mt-16 mb-5 text-amber-800">
-                    Testimoni
-                </div>
-
                 <div class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 ">
 
                     <?php
