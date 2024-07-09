@@ -10,7 +10,7 @@
             <!-- Judul -->
             <div class="h-full">
                 <!-- Judul About Us -->
-                <div class="w-full h-full lg:mt-24 text-center text-lime-500 font-montserrat font-extrabold lg:text-5xl text-3xl">
+                <div class="w-full h-full lg:mt-24 mt-10 text-center text-lime-500 font-montserrat font-extrabold lg:text-5xl text-3xl">
                     <span class="text-white bg-lime-500 rounded-md py-2 px-3">About</span> Our Company
                 </div>
                 <br>

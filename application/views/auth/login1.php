@@ -1,14 +1,14 @@
 <body class="w-full h-full">
-    <img src="<?php echo base_url('assets/img/bg_auth.jpg') ?>" class="fixed hidden lg:block inset-0 h-full w-full" style="z-index: -1;">
+    <img src="<?php echo base_url('assets/img/bg_auth.jpg') ?>" class="fixed lg:block inset-0 h-full w-full" style="z-index: -1;">
     <div class="pt-24">
         <!-- GRID -->
         <div class="w-full h-full">
             <div class="w-full h-full m-auto items-center text-center">
                 <div class="mt-36 text-center">
-                    <div class="w-4/12 m-auto">
+                    <div class="lg:w-4/12 w-full m-auto">
                         <?= $this->session->flashdata('message') ?>
                     </div>
-                    <div class="w-4/12 py-10 rounded-xl m-auto bg-slate-50 bg-opacity-70">
+                    <div class="lg:w-4/12 w-full py-10 rounded-xl m-auto bg-slate-50 bg-opacity-70">
 
                         <h1 class="text-5xl font-bold font-montserrat text-gray-800">Ahoy! Welcome!</h1>
 

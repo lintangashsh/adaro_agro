@@ -14,7 +14,7 @@
 <body class="w-full h-full" id="up">
     <div class="pt-24">
         <div class="relative lg:w-1/2 w-full m-auto px-10 lg:px-20 mt-20 justify-items-center">
-            <h1 class="font-montserrat my-10 lg:my-20 text-xl lg:text-4xl text-center font-bold text-lime-500">My Profile</h1>
+            <h1 class="font-montserrat my-10 lg:my-20 text-2xl lg:text-4xl text-center font-bold text-lime-500">My <span class="text-white bg-lime-500 rounded-md py-2 px-3">Profile</span></h1>
 
             <div class="w-full m-auto text-center">
                 <?= $this->session->flashdata('message'); ?>

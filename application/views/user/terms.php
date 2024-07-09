@@ -1,6 +1,6 @@
 <body class="w-full h-full" id="up">
     <div class="h-full w-full">
-        <div class="h-auto w-full bg-white lg:mt-5 mt-1 justify-center">
+        <div class="h-auto w-full bg-white lg:mt-5 mt-36 justify-center">
             <!-- Judul -->
             <div class="h-full">
                 <!-- Judul T & C -->
@@ -10,7 +10,7 @@
             </div>
 
             <!-- Detail T & C -->
-            <div  class="w-full h-full text-center lg:mt-28 mt-10 ">
+            <div  class="w-full h-full text-center lg:mt-28 mt-16">
                 <!-- Grid -->
                 <div class="grid lg:grid-cols-4 md:grid-cols-4 grid-cols-1 grid-flow-row lg:grid-flow-row md:grid-flow-row gap-4 w-full m-auto lg:mt-20 mt-10 justify-center">
                     <!-- Payment -->

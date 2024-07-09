@@ -30,7 +30,7 @@
             </div>
             <!-- LOGO DITENGAH SLIDER -->
             <div class="flex flex-col absolute left-1/2 lg:top-1/3 top-1/2 z-30">
-                <img src="<?= base_url('assets/img/Adaro Agro.png') ?>" class="w-44 h-54 lg:block hidden -translate-x-1/2 -translate-y-1/2">
+                <img src="<?= base_url('assets/img/Adaro Agro.png') ?>" class="w-4 h-54 lg:block hidden -translate-x-1/2 -translate-y-1/2">
                 <img src="<?= base_url('assets/img/we_bring.png') ?>" class="w-auto h-auto lg:block -translate-x-1/2 -translate-y-1/2">
 
             </div>

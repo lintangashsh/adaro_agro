@@ -8,7 +8,7 @@
     </a>
     <div class="pt-24">
         <div class="relative w-full px-10 lg:px-20 lg:mt-20 mt-10 justify-items-center">
-            <h1 class="font-montserrat my-5 lg:mt-20 text-xl lg:text-4xl text-center font-bold text-lime-500">Overall Review</h1>
+            <h1 class="font-montserrat my-5 lg:mt-20 text-2xl lg:text-4xl text-center font-bold text-lime-500"><span class="text-white bg-lime-500 rounded-md py-2 px-3">Overall</span> Review</h1>
 
             <div class="w-full mt-10 lg:bg-gray-50 rounded-xl lg:px-9 pb-1">
                 <div class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 ">
