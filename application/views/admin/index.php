@@ -20,105 +20,6 @@
                 <span class="text-white bg-lime-500 rounded-md py-2 px-3">Admin</span> Panel</h1>
             <?= $this->session->flashdata('message') ?>
 
-            <!-- Acc Review User -->
-            <div class="my-10 lg:mt-10">
-                <h1 class="lg:mb-5 font-montserrat text-base lg:text-2xl font-bold">Pending Review</h1>
-
-                <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
-                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-gray-800 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
-                            <tr>
-                                <th scope="col" class="py-3 px-6">
-                                    No
-                                </th>
-                                <th scope="col" class="py-3 px-6">
-                                    Name
-                                </th>
-                                <!-- <th scope="col" class="py-3 px-6">
-                                    Product Name
-                                </th> -->
-                                <th scope="col" class="py-3 px-6">
-                                    Review
-                                </th>
-                                <th scope="col" class="py-3 px-6">
-                                    Review Image
-                                </th>
-                                <th scope="col" class="py-3 px-6 text-center">
-                                    Time
-                                </th>
-                                <th scope="col" class="py-3 px-6 text-center">
-                                    Action
-                                </th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <?php
-                            $sql = "SELECT * FROM `tb_review_detail` WHERE `agree` = 0 ";
-                            $review_detail_acc  = $this->db->query($sql)->result();
-                            ?>
-                            <!-- FOREACH -->
-                            <?php
-                            $no = 1;
-                            foreach ($review_detail_acc as $rvdd) : ?>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                    <td class="py-4 px-6">
-                                        <?= $no++ ?>
-                                    </td>
-                                    <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        <?= $rvdd->name ?>
-                                    </th>
-                                    <!-- <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        <?= $rvdd->id_produk ?>
-                                    </th> -->
-                                    <td class="py-4 px-6">
-                                        <?= $rvdd->review ?>
-                                    </td>
-                                    <td class="py-4 px-6 text-center">
-                                        <?php
-                                        $media = $rvdd->image_review;
-                                        $ext = substr($media, -3);
-                                        $baseUrl = base_url('assets/img/testimoni/');
-
-                                        if ($ext == 'jpg') {
-                                            echo '<img class="w-20 h-20 rounded" src="' . $baseUrl . $rvdd->image_review . '">';
-                                        } else if ($ext == 'JPG') {
-                                            echo '<img class="w-20 h-20 rounded" src="' . $baseUrl . $rvdd->image_review . '">';
-                                        } else if ($ext == 'png') {
-                                            echo '<img class="w-20 h-20 rounded" src="' . $baseUrl . $rvdd->image_review . '">';
-                                        } else if ($ext == 'peg') {
-                                            echo '<img class="w-20 h-20 rounded" src="' . $baseUrl . $rvdd->image_review . '">';
-                                        } else {
-                                            echo '<video class="w-20 h-20 rounded" controls loop muted autoplay>';
-                                            echo '<source src="' . $baseUrl . $rvdd->image_review . '" type="video/webm">';
-                                            echo '<source src="' . $baseUrl . $rvdd->image_review . '" type="video/mp4">';
-                                            echo 'Sorry, your browser does not support a video tag!';
-                                            echo '</video>';
-                                        }
-                                        ?>
-
-                                    </td>
-                                    <td class="py-4 px-6 text-center">
-                                        <?= date('d F Y', $rvdd->posting_time) ?>
-                                    </td>
-                                    <td>
-                                        <a href="<?= base_url('admin/terima_testimoni/') . $rvdd->id_review ?>">
-                                            <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900">Accept</button>
-                                        </a>
-
-                                        <a href="<?= base_url('admin/tolak_testimoni/') . $rvdd->id_review ?>">
-                                            <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Reject</button>
-                                        </a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                            <!-- END FOREACH -->
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
             <!-- 
                     TABEL
                     USER
@@ -242,7 +143,102 @@
                 </div>
             </div>
 
+            <!-- Acc Review User -->
+            <div class="my-10 lg:mt-10">
+                <h1 class="lg:mb-5 font-montserrat text-base lg:text-2xl font-bold">Pending Review</h1>
 
+                <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-800 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="py-3 px-6">
+                                    No
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Name
+                                </th>
+                                <!-- <th scope="col" class="py-3 px-6">
+                                    Product Name
+                                </th> -->
+                                <th scope="col" class="py-3 px-6">
+                                    Review
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Review Image
+                                </th>
+                                <th scope="col" class="py-3 px-6 text-center">
+                                    Time
+                                </th>
+                                <th scope="col" class="py-3 px-6 text-center">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <?php
+                            $sql = "SELECT * FROM `tb_review_detail` WHERE `agree` = 0 ";
+                            $review_detail_acc  = $this->db->query($sql)->result();
+                            ?>
+                            <!-- FOREACH -->
+                            <?php
+                            $no = 1;
+                            foreach ($review_detail_acc as $rvdd) : ?>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                    <td class="py-4 px-6">
+                                        <?= $no++ ?>
+                                    </td>
+                                    <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <?= $rvdd->name ?>
+                                    </th>
+                                    <!-- <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <?= $rvdd->id_produk ?>
+                                    </th> -->
+                                    <td class="py-4 px-6">
+                                        <?= $rvdd->review ?>
+                                    </td>
+                                    <td class="py-4 px-6 text-center">
+                                        <?php
+                                        $media = $rvdd->image_review;
+                                        $ext = substr($media, -3);
+                                        $baseUrl = base_url('assets/img/testimoni/');
+
+                                        if ($ext == 'jpg') {
+                                            echo '<img class="w-20 h-20 rounded" src="' . $baseUrl . $rvdd->image_review . '">';
+                                        } else if ($ext == 'JPG') {
+                                            echo '<img class="w-20 h-20 rounded" src="' . $baseUrl . $rvdd->image_review . '">';
+                                        } else if ($ext == 'png') {
+                                            echo '<img class="w-20 h-20 rounded" src="' . $baseUrl . $rvdd->image_review . '">';
+                                        } else if ($ext == 'peg') {
+                                            echo '<img class="w-20 h-20 rounded" src="' . $baseUrl . $rvdd->image_review . '">';
+                                        } else {
+                                            echo '<video class="w-20 h-20 rounded" controls loop muted autoplay>';
+                                            echo '<source src="' . $baseUrl . $rvdd->image_review . '" type="video/webm">';
+                                            echo '<source src="' . $baseUrl . $rvdd->image_review . '" type="video/mp4">';
+                                            echo 'Sorry, your browser does not support a video tag!';
+                                            echo '</video>';
+                                        }
+                                        ?>
+                                    </td>
+                                    <td class="py-4 px-6 text-center">
+                                        <?= date('d F Y', $rvdd->posting_time) ?>
+                                    </td>
+                                    <td class="py-8 px-6 justify-center items-center flex">
+                                        <a href="<?= base_url('admin/terima_testimoni/') . $rvdd->id_review ?>">
+                                            <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900">Accept</button>
+                                        </a>
+                                        <a href="<?= base_url('admin/tolak_testimoni/') . $rvdd->id_review ?>">
+                                            <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Reject</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                            <!-- END FOREACH -->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
             <!-- TESTIMONI -->
             <div class="my-10 lg:mt-20">

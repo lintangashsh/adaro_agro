@@ -31,15 +31,16 @@
                         <h1 class="text-lg font-montserrat pb-2">Description</h1>
                         <p class="lg:w-9/12 w-full font-montserrat text-justify"><?= $pdk->description ?></p>
                         <br>
-                        <div class="grid lg:grid-cols-2 grid-cols-2 gap-3">
-                            <button class="bg-lime-600 hover:bg-lime-800 text-white w-3/2 rounded-lg font-montserrat font-bold py-4 duration-300">
-                                About Us                                        
-                            </button>
-                            <!-- <button class="bg-lime-600 hover:bg-lime-800 text-white w-1/2 rounded-lg font-montserrat font-bold py-4 duration-300">
-                                About Us                                        
-                            </button> -->
-                        </div>
-                        
+                        <div class="grid lg:grid-cols-2 grid-cols-2 gap-2">
+                            <a href="<?= base_url('user/tambah_testimoni_detail/') . $pdk->id ?>">
+                                <button class="bg-lime-600 hover:bg-lime-800 text-white lg:text-xl text-base w-3/4 rounded-lg font-montserrat font-bold py-4 duration-300">
+                                    Order Sample Product                                      
+                                </button>
+                                <!-- <button class="bg-lime-600 hover:bg-lime-800 text-white w-1/2 rounded-lg font-montserrat font-bold py-4 duration-300">
+                                    Order Product                            
+                                </button> -->
+                            </a>                            
+                        </div>                        
                     </div>
                 </div>
 
