@@ -15,10 +15,83 @@
 <body class="w-full h-full" id="up">
     <div class="pt-24">
         <div class="relative w-full px-10 lg:px-20 mt-20 justify-items-center">
-
             <h1 class="font-montserrat my-10 lg:my-20 text-xl lg:text-4xl text-center font-bold text-lime-500">
                 <span class="text-white bg-lime-500 rounded-md py-2 px-3">Admin</span> Panel</h1>
             <?= $this->session->flashdata('message') ?>
+
+            <!-- PENDING SAMPLE ORDER -->
+            <div class="my-10 lg:mt-20">
+                <h1 class="lg:mb-5 font-montserrat text-base lg:text-2xl font-bold pb-5">Sample Order</h1>
+                <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-800 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="py-3 px-6">
+                                    No
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Product Name
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Details
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Categroy
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Price
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Favorite
+                                </th>
+                                <th scope="col" class="py-3 px-6 text-center">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <!-- FOREACH -->
+                            <?php
+                            $no = 1;
+                            foreach ($semua_produk as $spdk) : ?>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                    <td class="py-4 px-6">
+                                        <?= $no++ ?>
+                                    </td>
+                                    <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <?= $spdk->product_name ?>
+                                    </th>
+                                    <td class="py-4 px-6">
+                                        <?= $spdk->description ?>
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        <?= $spdk->category ?>
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        USD <?= number_format($spdk->price, 1, ',', '.')  ?>
+                                    </td>
+                                    <td class="py-4 px-6 text-center">
+                                        <?= $spdk->favorite ?>
+                                    </td>
+                                    <!-- Button Site -->
+                                    <td class="py-4 px-6 text-center items-center flex">
+                                        <div>
+                                            <a href="#">
+                                                <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900">Process</button>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <?= anchor('admin/hapus_produk/' . $spdk->id, '<button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>') ?>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                            <!-- END FOREACH -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
             <!-- 
                     TABEL

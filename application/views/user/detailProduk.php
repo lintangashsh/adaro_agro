@@ -25,7 +25,7 @@
                     <div class="m-auto h-full w-full">
                         <h1 class="lg:text-3xl text-xl pb-1 mt-2 font-montserrat font-bold text-left top-0"><?= $pdk->product_name ?></h1>
                         <br>
-                        <h1 class="lg:text-3xl text-xl pb-1 font-montserrat font-bold text-left top-0">USD <?= number_format($pdk->price, 1, ',', '.')  ?></h1>
+                        <h1 class="lg:text-3xl text-xl pb-1 font-montserrat font-bold text-left top-0">USD <?= number_format($pdk->price, 1, ',', '.')  ?>/Kg</h1>
                         <br>
                         <br>
                         <h1 class="text-lg font-montserrat pb-2">Description</h1>
