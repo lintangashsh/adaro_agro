@@ -24,10 +24,22 @@
                     </div>
                     <div class="m-auto h-full w-full">
                         <h1 class="lg:text-3xl text-xl pb-1 mt-2 font-montserrat font-bold text-left top-0"><?= $pdk->product_name ?></h1>
+                        <br>
                         <h1 class="lg:text-3xl text-xl pb-1 font-montserrat font-bold text-left top-0">USD <?= number_format($pdk->price, 1, ',', '.')  ?></h1>
                         <br>
-                        <h1 class="text-lg font-montserrat pb-5">Description</h1>
+                        <br>
+                        <h1 class="text-lg font-montserrat pb-2">Description</h1>
                         <p class="lg:w-9/12 w-full font-montserrat text-justify"><?= $pdk->description ?></p>
+                        <br>
+                        <div class="grid lg:grid-cols-2 grid-cols-2 gap-3">
+                            <button class="bg-lime-600 hover:bg-lime-800 text-white w-3/2 rounded-lg font-montserrat font-bold py-4 duration-300">
+                                About Us                                        
+                            </button>
+                            <!-- <button class="bg-lime-600 hover:bg-lime-800 text-white w-1/2 rounded-lg font-montserrat font-bold py-4 duration-300">
+                                About Us                                        
+                            </button> -->
+                        </div>
+                        
                     </div>
                 </div>
 
