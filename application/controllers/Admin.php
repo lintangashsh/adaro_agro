@@ -72,6 +72,15 @@ class Admin extends CI_Controller
         redirect('admin');
     }
 
+    public function view_orders() {
+        $data['title'] = 'Order List';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['orders'] = $this->Order_model->get_orders();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('admin/orderList', $data);
+        $this->load->view('templates/footer');
+    }
 
     public function edit_semua_produk($id)
     {

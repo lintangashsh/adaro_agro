@@ -19,6 +19,57 @@
                 <span class="text-white bg-lime-500 rounded-md py-2 px-3">Admin</span> Panel</h1>
             <?= $this->session->flashdata('message') ?>            
 
+            <!-- TABEL ORDER -->
+            <div class="my-10 lg:mt-20">
+                <h1 class="lg:mb-5 font-montserrat text-base lg:text-2xl font-bold">All Orders</h1>
+
+                <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-800 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="py-3 px-6">
+                                    Order ID
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Product Name
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Price
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Quantity
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Customer Name
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Cutomer Email
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Order Date
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <!-- FOREACH -->
+                            <?php foreach ($orders as $order) : ?>
+                                <tr>
+                                    <td><?= $order->id; ?></td>
+                                    <td><?= $order->product_name; ?></td>
+                                    <td>USD <?= number_format($order->price, 2); ?></td>
+                                    <td><?= $order->quantity; ?></td>
+                                    <td><?= $order->name; ?></td>
+                                    <td><?= $order->email; ?></td>
+                                    <td><?= $order->order_date; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                            <!-- END FOREACH -->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
 
             <!-- 
                     TABEL
