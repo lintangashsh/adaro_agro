@@ -6,7 +6,7 @@
     <form method="post" action="<?= base_url('auth') ?>" class="flex flex-col justify-center items-center">
         <img src="<?php echo base_url('assets/img/avatar.svg') ?>" class="w-32">
 
-        <h2 class="my-8 font-montserrat font-bold text-3xl text-gray-700 text-center">Ahoy! Welcome!</h2>
+        <h2 class="my-8 font-montserrat font-bold text-3xl text-gray-700 text-center">Welcome to Adaro</h2>
 
         <?= $this->session->flashdata('message') ?>
 

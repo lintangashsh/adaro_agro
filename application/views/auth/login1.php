@@ -10,7 +10,7 @@
                     </div>
                     <div class="lg:w-4/12 w-full py-10 rounded-xl m-auto bg-slate-50 bg-opacity-70">
 
-                        <h1 class="text-5xl font-bold font-montserrat text-gray-800">Ahoy! Welcome!</h1>
+                        <h1 class="text-5xl font-bold font-montserrat text-gray-800">Welcome to Adaro</h1>
 
                         <!-- FORM -->
                         <form method="post" action="<?= base_url('auth') ?>" class="flex flex-col justify-center items-center mt-10">
