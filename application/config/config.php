@@ -23,7 +23,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/adaro_agro/';
+$config['base_url'] = 'http://43.218.128.2/adaro_agro/main/';
+$config['base_url'] = 'http://ec2-43-218-128-2.ap-southeast-3.compute.amazonaws.com/adaro_agro/main/';
 
 /*
 |--------------------------------------------------------------------------
